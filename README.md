@@ -29,8 +29,8 @@ Technology Used will include:
 ***
 ***
 
-[Trello Bored]('https://trello.com/b/AqCOhwfs/live-mas-agency') <br>
-[ERD]('https://drive.google.com/file/d/1---y4W1ArUAsNHLKmgcWSKrU3uLIxBd4/view?usp=sharing')
+[Trello Bored](https://trello.com/b/AqCOhwfs/live-mas-agency) <br>
+[ERD](https://drive.google.com/file/d/1---y4W1ArUAsNHLKmgcWSKrU3uLIxBd4/view?usp=sharing)
 
 ***
 ### Credits:
