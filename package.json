@@ -21,6 +21,7 @@
   "homepage": "https://github.com/DerWindFish/Live-Mas-Adoptions#readme",
   "dependencies": {
     "base64-js": "^1.5.1",
+    "body-parser": "^1.19.2",
     "bson": "^4.6.2",
     "buffer": "^5.7.1",
     "debug": "^4.3.4",
