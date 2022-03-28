@@ -1,3 +1,4 @@
+const volunteer = require('../models/volunteer');
 const Volunteer = require('../models/volunteer')
 
 const createVolunteer = async (req, res) => {
@@ -21,7 +22,53 @@ const getVolunteers = async (req, res) => {
     }
 }
 
+const getVolunteerById = async (req, res) => {
+    try {
+        const { id } = req.params;
+        const volunteer = await Volunteer.findById(id)
+        if (volunteer) {
+            return res.status(200).json({ volunteer })
+        }
+        return res.status(404).send('That volunteer does not exsit')
+    } catch (error) {
+        return res.status(500).send(error.message);
+    }
+}
+
+const updateVolunteerInfo = async (req, res) => {
+    try {
+        const { id } = req.params;
+        await Volunteer.findByIdAndUpdate(id, req.body, { new: true }, (err, volunteer) => {
+            if (err) {
+                res.status(500).send(err);
+            }
+            if (!volunteer) {
+                res.status(500).send('Volunteer not found');
+            }
+            return res.status(200).json(volunteer)
+        })
+    } catch (error) {
+        return res.status(500).send(error.message);
+    }
+}
+
+const deleteVolunteer = async (req, res) => {
+    try {
+        const { id } = req.params;
+        const deleted = await Volunteer.findByIdAndDelete(id)
+        if (deleted) {
+            return res.status(200).send('Volunteer deleted')
+        }
+        throw new Error('Volunteer not found');
+    } catch (error) {
+        return res.status(500).send(error.message);
+    }
+}
+
 module.exports = {
     createVolunteer,
-    getVolunteers
+    getVolunteers,
+    getVolunteerById,
+    updateVolunteerInfo,
+    deleteVolunteer
 }
