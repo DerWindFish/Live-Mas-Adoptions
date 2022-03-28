@@ -5,7 +5,11 @@ const Nav = () => {
     return (
         <nav className='navbar'>
             <h2>Live Más Adoptions</h2>
-            <Link to='/'>Home</Link>
+            <div>
+                <Link to='/'>Home</Link>
+                <Link to='/pets'>Pets</Link>
+                <Link to='/volunteers'>Volunteer</Link>
+            </div>
         </nav>
     )
 }
