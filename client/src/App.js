@@ -1,5 +1,6 @@
 import './App.css'
 import Nav from './components/Nav'
+import Pets from './components/Pets'
 
 function App() {
   return (
