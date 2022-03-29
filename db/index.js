@@ -1,9 +1,10 @@
 const mongoose = require('mongoose')
+require('dotenv').config()
 
-let MONGODB_URI = 'mongodb://127.0.0.1:27017/liveMasDatabase'
+let dbUrl = process.env.NODE_ENV === 'production' ? process.env.MONGODB_URI : 'mongodb://127.0.0.1:27017/liveMasDatabase'
 
 mongoose
-    .connect(MONGODB_URI, { useUnifiedTopology: true, useNewUrlParser: true})
+    .connect(dbUrl)
     .then(() => {
         console.log('Suceccfully connected to MongoDB.')
     })

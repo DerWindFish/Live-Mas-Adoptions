@@ -6,14 +6,12 @@ const PetsDetails = (props) => {
 
     const [pets, setPet] = useState('')
 
-    let { id } = useParams()
+    let { _id } = useParams()
 
     useEffect(() => {
-        let pets = props.pets.find(
-            (pets) => pets.id === parseInt(id)
-        )
+        let pets = props.pets.find((pet) => pet._id === parseInt(_id))
         setPet(pets)
-    }, [props.pets, id])
+    }, [props.pets, _id])
 
     return pets ? (
         <div className="detail">
