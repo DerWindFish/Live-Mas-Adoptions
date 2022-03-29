@@ -31,6 +31,19 @@ const getPets = async (req, res) => {
     }
 }
 
+const getPetById = async (req, res) => {
+    try {
+        const { id } = req.params;
+        const pets = await Pets.findById(id)
+        if (pets) {
+            return res.status(200).json({ pets })
+        }
+        return res.status(404).send('That pet does not exsit')
+    } catch (error) {
+        return res.status(500).send(error.message);
+    }
+}
+
 const getVolunteerById = async (req, res) => {
     try {
         const { id } = req.params;
@@ -78,6 +91,7 @@ module.exports = {
     createVolunteer,
     getVolunteers,
     getPets,
+    getPetById,
     getVolunteerById,
     updateVolunteerInfo,
     deleteVolunteer

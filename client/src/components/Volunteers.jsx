@@ -22,7 +22,7 @@ const Volunteers = () => {
             <h1>List of Volunteers:</h1>
         { volunteers.map((volunteers) => {
             return (
-            <div key={volunteers.id} className='vol'>
+            <div key={volunteers._id} className='vol'>
                 <h2>name: { volunteers.name }</h2>
                 <h4>phone: { volunteers.phone }</h4>
                 <h4>email: { volunteers.email }</h4>
