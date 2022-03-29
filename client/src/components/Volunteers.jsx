@@ -24,6 +24,7 @@ const Volunteers = (props) => {
                 <h3>{ volunteers.name }</h3>
                 <h3>{ volunteers.phone }</h3>
                 <h3>{ volunteers.email }</h3>
+                <h6>{ volunteers._id }</h6>
             </div>
             )    
         })
