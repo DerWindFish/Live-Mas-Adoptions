@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react'
 
 const BASE_URL = 'http://localhost:3001/api'
 
-const Volunteers = (props) => {
+const Volunteers = () => {
 
     const [volunteers, setVolunteers] = useState([])
 
@@ -18,16 +18,20 @@ const Volunteers = (props) => {
     }, [])
 
     return (
-        volunteers.map((volunteers) => {
+        <div>
+            <h1>List of Volunteers:</h1>
+        { volunteers.map((volunteers) => {
             return (
-            <div key={volunteers.id}>
-                <h3>{ volunteers.name }</h3>
-                <h3>{ volunteers.phone }</h3>
-                <h3>{ volunteers.email }</h3>
-                <h6>{ volunteers._id }</h6>
+            <div key={volunteers.id} className='vol'>
+                <h2>name: { volunteers.name }</h2>
+                <h4>phone: { volunteers.phone }</h4>
+                <h4>email: { volunteers.email }</h4>
+                <h6>ID: { volunteers._id }</h6>
+                <h4>---------------------------------------</h4>
             </div>
-            )    
-        })
+            )}    
+        )}
+        </div>
      )
 }
 

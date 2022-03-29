@@ -13,6 +13,7 @@ const Pets = () => {
         async function getPets() {
             const res = await axios.get(`${BASE_URL}/pets`)
             console.log(res.data.pets)
+            setPets(res.data.pets)
         }
         getPets()
     }, [])
@@ -20,6 +21,15 @@ const Pets = () => {
     return (
         <div>
             Bark Bark Pet Div
+        
+        { pets.map((pets) =>{
+            return (
+                <div key={pets.id} className='pets'>
+                    <img src={pets.picture} alt=''/>
+                    <h3>{pets.name}</h3>
+                </div>
+            )
+        })}
         </div>
     )
 }
