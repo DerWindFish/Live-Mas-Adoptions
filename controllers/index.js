@@ -1,5 +1,5 @@
-const volunteer = require('../models/volunteer');
-const Volunteer = require('../models/volunteer')
+const Volunteer = require('../models/volunteer');
+const Pets = require('../models/pet');
 
 const createVolunteer = async (req, res) => {
     try {
@@ -17,6 +17,15 @@ const getVolunteers = async (req, res) => {
     try{
         const volunteers = await Volunteer.find()
         return res.status(200).json({ volunteers })
+    } catch (error) {
+        return res.status(500).send(error.message)
+    }
+}
+
+const getPets = async (req, res) => {
+    try{
+        const pets = await Pets.find()
+        return res.status(200).json({ pets })
     } catch (error) {
         return res.status(500).send(error.message)
     }
@@ -68,6 +77,7 @@ const deleteVolunteer = async (req, res) => {
 module.exports = {
     createVolunteer,
     getVolunteers,
+    getPets,
     getVolunteerById,
     updateVolunteerInfo,
     deleteVolunteer
