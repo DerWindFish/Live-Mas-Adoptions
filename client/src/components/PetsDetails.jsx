@@ -1,29 +1,48 @@
 import React, { useEffect, useState } from "react"
 import { useParams } from "react-router-dom"
+import axios from "axios"
 import { Link } from "react-router-dom"
 
-const PetsDetails = (props) => {
+const BASE_URL = 'http://localhost:3001/api'
 
-    const [pets, setPet] = useState('')
+const PetsDetails = () => {
 
-    let { _id } = useParams()
+  const [selcectedPet, setPet] = useState({})
 
-    useEffect(() => {
-        let pets = props.pets.find((pet) => pet._id === parseInt(_id))
-        setPet(pets)
-    }, [props.pets, _id])
+  const [ pets, setPets] = useState([])
 
-    return pets ? (
-        <div className="detail">
-            <div>
-                <img src={pets.picture} alt={pets.name} />
-                <h1>{pets.name}</h1>
-                <h3>{pets.age}</h3>
-                <p>{pets.about}</p>
-            </div>
-        <Link to='/pets'>Back to pets</Link>
-        </div>
-    ) : null;
+  let { id } = useParams
+
+  const getPets = async () => {
+    const res = await axios.get(`${BASE_URL}/pets`)
+    console.log(res.data.pets)
+    setPets(res.data.pets)
+
+    updateCurrentPet(res.data.pets)
+}
+
+  const updateCurrentPet = (pets) => {
+    let currentPet = pets.find(
+      (pets) => pets._id === id
+    
+      )
+      setPet(currentPet)
+  }
+
+  useEffect(() => {
+    getPets();
+    return () => {
+      setPet({})
+    }
+  }, [])
+
+
+  return  (
+    <div className="detail">
+      
+      <Link to='/pets'>Back</Link>
+    </div>
+  ) 
 }
 
 export default PetsDetails

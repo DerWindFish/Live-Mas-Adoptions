@@ -23,11 +23,11 @@ const Volunteers = () => {
         { volunteers.map((volunteers) => {
             return (
             <div key={volunteers._id} className='vol'>
-                <h2>name: { volunteers.name }</h2>
-                <h4>phone: { volunteers.phone }</h4>
-                <h4>email: { volunteers.email }</h4>
-                <h6>ID: { volunteers._id }</h6>
-                <h4>---------------------------------------</h4>
+                <p>name: { volunteers.name }</p>
+                <p>phone: { volunteers.phone }</p>
+                <p>email: { volunteers.email }</p>
+                <p>ID: { volunteers._id }</p>
+                
             </div>
             )}    
         )}

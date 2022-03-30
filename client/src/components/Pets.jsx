@@ -11,12 +11,13 @@ const Pets = () => {
 
     const [pets, setPets] = useState([])
 
+    const getPets = async () => {
+        const res = await axios.get(`${BASE_URL}/pets`)
+        console.log(res.data.pets)
+        setPets(res.data.pets)
+    }
+
     useEffect(() => {
-        async function getPets() {
-            const res = await axios.get(`${BASE_URL}/pets`)
-            console.log(res.data.pets)
-            setPets(res.data.pets)
-        }
         getPets()
     }, [])
 
