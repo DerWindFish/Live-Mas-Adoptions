@@ -32,4 +32,11 @@
 .vol {
     text-align: left;
     padding-top: 8px;
+    border: 2px solid black;
+    padding: 5px;
+    margin: 3px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: initial;
 }
