@@ -1,27 +1,74 @@
 import React from "react";
 import axios from 'axios';
 import { useState, useEffect } from 'react'
+import NewVolunteer from "./NewVolunteer";
 
 const BASE_URL = 'http://localhost:3001/api'
 
 const Volunteers = () => {
 
     const [volunteers, setVolunteers] = useState([])
-    const [addVolunteer, setAddVolunteer] = useState({
-        name: '',
-        phone: '',
-        email: ''
-    })
+    // const [name, setName] = useState('')
+    // const [phone, setPhone] = useState('')
+    // const [email, setEmail] = useState('')
+    // const [addVolunteer, setAddVolunteer] = useState(false)
 
-    const handleAddVolunteer = (e) => {
-        const fieldName = e.target.getAttribute('name')
-        const fieldValue = e.target.value
+    // const handleName = (e) => {
+    //     setName(e.target.value)
+    // }
 
-        const newVolunteer = {...addVolunteer}
-        newVolunteer[fieldName] = fieldValue
+    // const handlePhone = (e) => {
+    //     setPhone(e.target.value)
+    // }
 
-        setAddVolunteer(newVolunteer)
-    }
+    // const handleEmail = (e) => {
+    //     setEmail(e.target.value)
+    // }
+
+    
+
+    // const handleAddVolunteer = (e) => {
+    //     const fieldName = e.target.getAttribute('name')
+    //     const fieldValue = e.target.value
+
+    //     const newVolunteer = {...addVolunteer}
+    //     newVolunteer[fieldName] = fieldValue
+
+    //     setAddVolunteer(newVolunteer)
+    // }
+
+    // const createVolunteer = async () => {
+    //     await axios.post(`${BASE_URL}/volunteer/`, {
+    //         name: name,
+    //         phone: phone,
+    //         email: email
+    //     })
+    //     .then(function (respose) {
+    //         setAddVolunteer(true);
+    //         console.log(respose)
+    //     })
+    //     .catch(function (error) {
+    //         console.log(error)
+    //     })
+    // }
+
+    // useEffect(() => {
+    //     return () => {
+    //         setAddVolunteer(false)
+    //     }
+    // }, [addVolunteer])
+
+    // const handleAddVolunteerSubmit = (e) => {
+    //     e.preventDefault()
+
+    //     const newVolunteerData = {
+    //         name: addVolunteer.name,
+    //         phone: addVolunteer.phone,
+    //         email: addVolunteer.email
+    //     }
+    //     const newVolunteerAdd = [...volunteers, newVolunteerData]
+    //     setVolunteers(newVolunteerAdd)
+    // }
 
     useEffect(() => {
         async function getVolunteers() {
@@ -46,30 +93,32 @@ const Volunteers = () => {
             )}    
         )}
         <h2>Add Volunteer:</h2>
-        <form>
+        <NewVolunteer />
+        {/* <form onSubmit={handleAddVolunteerSubmit} */}
+            {/* <form>
             <input
                 type='text'
                 name='name'
                 required='required'
                 placeholder='Enter your name'
-                onChange={handleAddVolunteer}
+                onChange={(e) => handleName(e, 'num')}
             />
             <input
                 type='text'
                 name='phone'
                 required='required'
                 placeholder='Enter your phone number'
-                onChange={handleAddVolunteer}
+                onChange={(e) => handlePhone(e, 'num')}
             />
             <input
                 type='text'
                 name='email'
                 required='required'
                 placeholder='Enter your email'
-                onChange={handleAddVolunteer}
+                onChange={(e) => handleEmail(e, 'num')}
             />
-            <button type="submit">Add</button>
-        </form>
+            <button type="submit" onClick={() => createVolunteer}>Add</button>
+        </form> */}
         </div>
      )
 }
