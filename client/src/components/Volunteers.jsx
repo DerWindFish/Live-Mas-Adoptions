@@ -2,39 +2,41 @@ import React from "react";
 import axios from 'axios';
 import { useState, useEffect } from 'react'
 import NewVolunteer from "./NewVolunteer";
+// import EditVolunteer from "./EditVolunteer";
 
 const BASE_URL = 'http://localhost:3001/api'
 
 const Volunteers = () => {
 
     const [volunteers, setVolunteers] = useState([])
-    // const [name, setName] = useState('')
-    // const [phone, setPhone] = useState('')
-    // const [email, setEmail] = useState('')
-    // const [addVolunteer, setAddVolunteer] = useState(false)
-
-    // const handleName = (e) => {
-    //     setName(e.target.value)
-    // }
-
-    // const handlePhone = (e) => {
-    //     setPhone(e.target.value)
-    // }
-
-    // const handleEmail = (e) => {
-    //     setEmail(e.target.value)
-    // }
-
     
+    useEffect(() => {
+        async function getVolunteers() {
+            const res = await axios.get(`${BASE_URL}/volunteer`)
+            console.log(res.data.volunteers)
+            setVolunteers(res.data.volunteers)
+        }
+        getVolunteers()
+    }, [])
 
-    // const handleAddVolunteer = (e) => {
-    //     const fieldName = e.target.getAttribute('name')
-    //     const fieldValue = e.target.value
+    const deleteVolunteer = async (_id) => {
+        await axios.delete(`${BASE_URL}/volunteer/${_id}`)
+    }
 
-    //     const newVolunteer = {...addVolunteer}
-    //     newVolunteer[fieldName] = fieldValue
-
-    //     setAddVolunteer(newVolunteer)
+    // const deleteVolunteer = async (id) => {
+    //     await axios.delete(`${BASE_URL}/volunteer/${id}`)
+    //     .then(function (response) {
+    //          volunteers.filter((volunteers) =>{
+    //             console.log(response)
+    //             return volunteers
+                
+    //         })
+    //         .catch(function (error) {
+    //             console.log(error)
+    //         })
+    //     })
+        
+    //     setVolunteers()
     // }
 
     // const createVolunteer = async () => {
@@ -52,73 +54,22 @@ const Volunteers = () => {
     //     })
     // }
 
-    // useEffect(() => {
-    //     return () => {
-    //         setAddVolunteer(false)
-    //     }
-    // }, [addVolunteer])
-
-    // const handleAddVolunteerSubmit = (e) => {
-    //     e.preventDefault()
-
-    //     const newVolunteerData = {
-    //         name: addVolunteer.name,
-    //         phone: addVolunteer.phone,
-    //         email: addVolunteer.email
-    //     }
-    //     const newVolunteerAdd = [...volunteers, newVolunteerData]
-    //     setVolunteers(newVolunteerAdd)
-    // }
-
-    useEffect(() => {
-        async function getVolunteers() {
-            const res = await axios.get(`${BASE_URL}/volunteer`)
-            console.log(res.data.volunteers)
-            setVolunteers(res.data.volunteers)
-        }
-        getVolunteers()
-    }, [])
-
     return (
         <div>
             <h1>List of Volunteers:</h1>
         { volunteers.map((volunteers) => {
             return (
-            <div key={volunteers._id} className='vol'>
-                <p>name: { volunteers.name }</p>
-                <p>phone: { volunteers.phone }</p>
-                <p>email: { volunteers.email }</p>
-                
-            </div>
+                <div className="vol" key={volunteers._id}>
+                    <p>name: { volunteers.name } </p>
+                    <p> phone: { volunteers.phone } </p>
+                    <p> email: { volunteers.email } </p>
+                    <button className="submit-button" type='submit' onClick={() => deleteVolunteer(volunteers._id)}>Delete</button>
+                </div>
             )}    
         )}
         <h2>Add Volunteer:</h2>
         <NewVolunteer />
-        {/* <form onSubmit={handleAddVolunteerSubmit} */}
-            {/* <form>
-            <input
-                type='text'
-                name='name'
-                required='required'
-                placeholder='Enter your name'
-                onChange={(e) => handleName(e, 'num')}
-            />
-            <input
-                type='text'
-                name='phone'
-                required='required'
-                placeholder='Enter your phone number'
-                onChange={(e) => handlePhone(e, 'num')}
-            />
-            <input
-                type='text'
-                name='email'
-                required='required'
-                placeholder='Enter your email'
-                onChange={(e) => handleEmail(e, 'num')}
-            />
-            <button type="submit" onClick={() => createVolunteer}>Add</button>
-        </form> */}
+        {/* <EditVolunteer /> */}
         </div>
      )
 }

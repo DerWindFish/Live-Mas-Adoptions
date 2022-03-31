@@ -44,26 +44,26 @@ const NewVolunteer = (props) => {
     }, [addVolunteer])
 
     return(
-        <div className='vol-add-form'>
+        <div>
             <input
                 type='text'
                 name='name'
                 required='required'
-                placeholder="Enter your name here"
+                placeholder="Enter your name"
                 onChange={(e) => handleName(e, 'num')}
                 />
             <input
                 type='text'
                 name='phone'
                 required='required'
-                placeholder="Enter your phone number here"
+                placeholder="Enter your phone number"
                 onChange={(e) => handlePhone(e, 'num')}
                 />
             <input
                 type='email'
                 name='email'
                 required='required'
-                placeholder="Enter your email here"
+                placeholder="Enter your email"
                 onChange={(e) => handleEmail(e, 'num')}
                 />
             <button className="submit-button" type='submit' onClick={() => createVolunteer()}>Add</button>

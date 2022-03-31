@@ -79,9 +79,9 @@ const deleteVolunteer = async (req, res) => {
         const { id } = req.params;
         const deleted = await Volunteer.findByIdAndDelete(id)
         if (deleted) {
-            return res.status(200).send('Volunteer deleted')
+            return res.status(200).send("Volunteer deleted");
         }
-        throw new Error('Volunteer not found');
+        throw new Error("Volunteer not found");
     } catch (error) {
         return res.status(500).send(error.message);
     }
