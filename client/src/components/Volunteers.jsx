@@ -30,11 +30,13 @@ const Volunteers = () => {
             return (
                 
                 <div className="vol" key={volunteers._id}>
+                    <form>
                     <p>name: { volunteers.name } </p>
                     <p> phone: { volunteers.phone } </p>
                     <p> email: { volunteers.email } </p>
                     <button>Edit</button>
                     <button className="submit-button" type='submit' onClick={() => deleteVolunteer(volunteers._id)}>Delete</button>
+                    </form>
                 </div>
                 
             )}    
