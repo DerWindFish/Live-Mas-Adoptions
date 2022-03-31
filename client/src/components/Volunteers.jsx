@@ -2,20 +2,13 @@ import React from "react";
 import axios from 'axios';
 import { useState, useEffect } from 'react'
 import NewVolunteer from "./NewVolunteer";
-import EditVolunteer from "./EditVolunteer";
-import ViewVolunteers from "./ViewVolunteers";
+// import EditVolunteer from "./EditVolunteer";
 
 const BASE_URL = 'http://localhost:3001/api'
 
 const Volunteers = () => {
 
     const [volunteers, setVolunteers] = useState([])
-
-    const [editVolunteer, setEditVolunteer] = useState({
-        name: '',
-        phone: '',
-        email:''
-    })
     
     useEffect(() => {
         async function getVolunteers() {
@@ -30,53 +23,24 @@ const Volunteers = () => {
         await axios.delete(`${BASE_URL}/volunteer/${_id}`)
     }
 
-    // const updateVolunteerInfo = async (_id, value) => {
-    //     await axios.put(`${BASE_URL}/volunteer/${_id}`, {
-    //         name: value,
-    //         phone: value,
-    //         email: value
-    //     })
-    // }
-
-    const handleUpdateVolunteer = (e) => {
-        e.preventDefault()
-        
-        const editVolunteer = {
-            name: editVolunteer.name,
-            phone: editVolunteer.phone,
-            email: editVolunteer.email
-        }
-    }
-
-    const handleUpdateVolunteerSubmit = (e) => {
-        const editedVolunteer = {
-            name: editVolunteer.name,
-            phone: editVolunteer.phone,
-            email: editVolunteer.email
-        }
-    }
-
-    
-
     return (
         <div>
             <h1>List of Volunteers:</h1>
         { volunteers.map((volunteers) => {
             return (
+                
                 <div className="vol" key={volunteers._id}>
-                    <form onSubmit={handleUpdateVolunteerSubmit}>
                     <p>name: { volunteers.name } </p>
                     <p> phone: { volunteers.phone } </p>
                     <p> email: { volunteers.email } </p>
-                    <button className="submit-button" onClick={(e) => handleUpdateVolunteer(e, volunteers)}>Edit</button>
+                    <button>Edit</button>
                     <button className="submit-button" type='submit' onClick={() => deleteVolunteer(volunteers._id)}>Delete</button>
-                    </form>
                 </div>
+                
             )}    
         )}
         <h2>Add Volunteer:</h2>
         <NewVolunteer />
-        <EditVolunteer />
         </div>
      )
 }
