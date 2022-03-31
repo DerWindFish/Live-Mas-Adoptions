@@ -65,9 +65,9 @@ const updateVolunteerInfo = async (req, res) => {
                 res.status(500).send(err);
             }
             if (!volunteer) {
-                res.status(500).send('Volunteer not found');
+                res.status(500).send('Volunteer not found!');
             }
-            return res.status(200).json(volunteer)
+            return res.status(200).json(volunteer);
         })
     } catch (error) {
         return res.status(500).send(error.message);

@@ -1,7 +1,6 @@
 import React from "react";
 import { useState, useEffect} from 'react'
 import axios from 'axios'
-import { useNavigate } from "react-router-dom";
 
 
 const BASE_URL = 'http://localhost:3001/api'
@@ -21,22 +20,16 @@ const Pets = () => {
         getPets()
     }, [])
 
-    let navigate = useNavigate()
-
-    const thisPet = (pets) => {
-        navigate(`${pets._id}`)
-    }
+    
 
     return (
-        <div>
-            Bark Bark Pet Div
-        
+        <div className="pet-grid">
         { pets.map((pets) =>{
             return (
-                <div key={pets._id} className='pets' onClick={() => thisPet(pets)}>
+                <div key={pets._id} className='pet-card'>
                     <img src={pets.picture} alt='' className="pet-image"/>
                     <h3>{pets.name}</h3>
-                    <h3>{pets.age}</h3>
+                    <h3>age: {pets.age}</h3>
                     <p>{pets.about}</p>
                 </div>
             )

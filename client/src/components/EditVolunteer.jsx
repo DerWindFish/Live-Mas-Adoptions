@@ -1,39 +1,75 @@
-// import React from "react"
-// // import {useState, useEffect} from 'react'
-// // import axios from "axios"
-// // import { useParams } from "react-router-dom"
-// // const BASE_URL = 'http://localhost:3001/api'
+import React from "react"
+import {useState, useEffect} from 'react'
+import axios from "axios"
+const BASE_URL = 'http://localhost:3001/api'
 
+const EditVolunteer = ({volunteer}) => {
 
-// const EditVolunteer = ({editVolunteer, handleEditVolunteerChange}) => {
+    const [name, setNewName] = useState('')
+    const [phone, setNewPhone] = useState('')
+    const [email, setNewEmail] = useState('')
+    const [addEditVolunteer, setAddEditVolunteer] = useState(false)
 
-// return (
-//     <div>
-//         <input
-//                 type='text'
-//                 name='name'
-//                 required='required'
-//                 placeholder="Enter your name"
-//                 value={editVolunteer.name}
-//                 onChange={handleEditVolunteerChange}
-//                 />
-//             <input
-//                 type='text'
-//                 name='phone'
-//                 required='required'
-//                 placeholder="Enter your phone number"
-//                 onChange={handleEditVolunteerChange}
-//                 />
-//             <input
-//                 type='email'
-//                 name='email'
-//                 required='required'
-//                 placeholder="Enter your email"
-//                 onChange={handleEditVolunteerChange}
-//                 />
-//         <button type='submit'>Save Changes</button>
-    
-//     </div>
-// )
-// }
-// export default EditVolunteer
+    const handleName = (e) => {
+        setNewName(e.target.value)
+    }
+
+    const handlePhone = (e) => {
+        setNewPhone(e.target.value)
+    }
+
+    const handleEmail = (e) => {
+        setNewEmail(e.target.value)
+    }
+
+    const updateVolunteerInfo = async (_id) => {
+        await axios.put(`${BASE_URL}/volunteer/${_id}`, {
+            name: name,
+            phone: phone,
+            email: email
+        })
+        .then(function (respose) {
+            setAddEditVolunteer(true);
+            console.log(respose)
+        })
+        .catch(function (error) {
+            console.log(error)
+        })
+
+    }
+
+    useEffect(() => {
+        return () => {
+            setAddEditVolunteer(false)
+        }
+    }, [addEditVolunteer])
+
+    return(
+        <div>
+            <input
+                type='text'
+                name='name'
+                required='required'
+                placeholder="Enter your name"
+                onChange={(e) => handleName(e)}
+                />
+            <input
+                type='text'
+                name='phone'
+                required='required'
+                placeholder="Enter your phone number"
+                onChange={(e) => handlePhone(e)}
+                />
+            <input
+                type='email'
+                name='email'
+                required='required'
+                placeholder="Enter your email"
+                onChange={(e) => handleEmail(e)}
+                />
+            <button className="submit-button" type='submit' onClick={() => updateVolunteerInfo()}>Change</button>
+        </div>
+    )
+}
+
+export default EditVolunteer

@@ -3,7 +3,7 @@ import {useState, useEffect} from 'react'
 import axios from "axios"
 const BASE_URL = 'http://localhost:3001/api'
 
-const NewVolunteer = (props) => {
+const NewVolunteer = () => {
 
     const [name, setName] = useState('')
     const [phone, setPhone] = useState('')
@@ -50,21 +50,21 @@ const NewVolunteer = (props) => {
                 name='name'
                 required='required'
                 placeholder="Enter your name"
-                onChange={(e) => handleName(e, 'num')}
+                onChange={(e) => handleName(e)}
                 />
             <input
                 type='text'
                 name='phone'
                 required='required'
                 placeholder="Enter your phone number"
-                onChange={(e) => handlePhone(e, 'num')}
+                onChange={(e) => handlePhone(e)}
                 />
             <input
                 type='email'
                 name='email'
                 required='required'
                 placeholder="Enter your email"
-                onChange={(e) => handleEmail(e, 'num')}
+                onChange={(e) => handleEmail(e)}
                 />
             <button className="submit-button" type='submit' onClick={() => createVolunteer()}>Add</button>
         </div>

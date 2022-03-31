@@ -5,9 +5,6 @@ import Home from './components/Home'
 import Volunteers from './components/Volunteers'
 import { Routes, Route} from 'react-router-dom'
 import PetsDetails from "./components/PetsDetails";
-// import axios from 'axios'
-// import {useState, useEffect } from 'react'
-// const BASE_URL = 'localhost:3001/api'
 
 
 function App() {

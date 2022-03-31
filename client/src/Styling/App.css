@@ -2,6 +2,7 @@
     padding: 0;
     margin:0;
     box-sizing: border-box;
+    /* background-image: url("https://www.tacobell.com/images/2019-Blog-Wallpaper-10.jpg"); */
 }
 
 .homediv {
@@ -9,6 +10,8 @@
     justify-content: center;
     display: grid;
     text-align: center;
+    /* background-image: url("https://www.tacobell.com/images/2019-Blog-Wallpaper-10.jpg") ; */
+    display:inherit;
 }
 
 .navbar {
@@ -41,3 +44,21 @@
     height: 250px;
     width: 320px;
 }
+.pet-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+  
+  .pet-card {
+    padding: 1em;
+    width: 18em;
+    height: 15em;
+    background-image: url('https://www.tacobell.com/images/2019-Blog-Wallpaper-10.jpg');
+    border-radius: 0.5em;
+    margin: 1em;
+    justify-content: space-around;
+    box-shadow: 0 0 0.25em rgba(0, 0, 0, 0.527);
+    color: black;
+    font-family: 'Georgia';
+  }
