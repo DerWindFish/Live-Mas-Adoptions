@@ -33,7 +33,7 @@ const Pets = () => {
         
         { pets.map((pets) =>{
             return (
-                <div key={pets._id} className='pets'>
+                <div key={pets._id} className='pets' onClick={() => thisPet(pets)}>
                     <img src={pets.picture} alt='' className="pet-image"/>
                     <h3>{pets.name}</h3>
                     <h3>{pets.age}</h3>

@@ -34,9 +34,10 @@ const Volunteers = () => {
                     <p>name: { volunteers.name } </p>
                     <p> phone: { volunteers.phone } </p>
                     <p> email: { volunteers.email } </p>
+                    </form>
                     <button>Edit</button>
                     <button className="submit-button" type='submit' onClick={() => deleteVolunteer(volunteers._id)}>Delete</button>
-                    </form>
+                    {/* </form> */}
                 </div>
                 
             )}    
