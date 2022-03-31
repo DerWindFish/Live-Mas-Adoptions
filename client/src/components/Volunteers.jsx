@@ -2,13 +2,20 @@ import React from "react";
 import axios from 'axios';
 import { useState, useEffect } from 'react'
 import NewVolunteer from "./NewVolunteer";
-// import EditVolunteer from "./EditVolunteer";
+import EditVolunteer from "./EditVolunteer";
+import ViewVolunteers from "./ViewVolunteers";
 
 const BASE_URL = 'http://localhost:3001/api'
 
 const Volunteers = () => {
 
     const [volunteers, setVolunteers] = useState([])
+
+    const [editVolunteer, setEditVolunteer] = useState({
+        name: '',
+        phone: '',
+        email:''
+    })
     
     useEffect(() => {
         async function getVolunteers() {
@@ -23,36 +30,33 @@ const Volunteers = () => {
         await axios.delete(`${BASE_URL}/volunteer/${_id}`)
     }
 
-    // const deleteVolunteer = async (id) => {
-    //     await axios.delete(`${BASE_URL}/volunteer/${id}`)
-    //     .then(function (response) {
-    //          volunteers.filter((volunteers) =>{
-    //             console.log(response)
-    //             return volunteers
-                
-    //         })
-    //         .catch(function (error) {
-    //             console.log(error)
-    //         })
+    // const updateVolunteerInfo = async (_id, value) => {
+    //     await axios.put(`${BASE_URL}/volunteer/${_id}`, {
+    //         name: value,
+    //         phone: value,
+    //         email: value
     //     })
-        
-    //     setVolunteers()
     // }
 
-    // const createVolunteer = async () => {
-    //     await axios.post(`${BASE_URL}/volunteer/`, {
-    //         name: name,
-    //         phone: phone,
-    //         email: email
-    //     })
-    //     .then(function (respose) {
-    //         setAddVolunteer(true);
-    //         console.log(respose)
-    //     })
-    //     .catch(function (error) {
-    //         console.log(error)
-    //     })
-    // }
+    const handleUpdateVolunteer = (e) => {
+        e.preventDefault()
+        
+        const editVolunteer = {
+            name: editVolunteer.name,
+            phone: editVolunteer.phone,
+            email: editVolunteer.email
+        }
+    }
+
+    const handleUpdateVolunteerSubmit = (e) => {
+        const editedVolunteer = {
+            name: editVolunteer.name,
+            phone: editVolunteer.phone,
+            email: editVolunteer.email
+        }
+    }
+
+    
 
     return (
         <div>
@@ -60,16 +64,19 @@ const Volunteers = () => {
         { volunteers.map((volunteers) => {
             return (
                 <div className="vol" key={volunteers._id}>
+                    <form onSubmit={handleUpdateVolunteerSubmit}>
                     <p>name: { volunteers.name } </p>
                     <p> phone: { volunteers.phone } </p>
                     <p> email: { volunteers.email } </p>
+                    <button className="submit-button" onClick={(e) => handleUpdateVolunteer(e, volunteers)}>Edit</button>
                     <button className="submit-button" type='submit' onClick={() => deleteVolunteer(volunteers._id)}>Delete</button>
+                    </form>
                 </div>
             )}    
         )}
         <h2>Add Volunteer:</h2>
         <NewVolunteer />
-        {/* <EditVolunteer /> */}
+        <EditVolunteer />
         </div>
      )
 }
