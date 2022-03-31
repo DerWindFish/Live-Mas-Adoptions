@@ -28,6 +28,7 @@ const Pets = () => {
             return (
                 <div key={pets._id} className='pet-card'>
                     <img src={pets.picture} alt='' className="pet-image"/>
+                    <br></br>
                     <h3>{pets.name}</h3>
                     <h3>age: {pets.age}</h3>
                     <p>{pets.about}</p>
