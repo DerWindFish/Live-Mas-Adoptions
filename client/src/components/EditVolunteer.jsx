@@ -24,9 +24,9 @@ const EditVolunteer = ({volunteer}) => {
 
     const updateVolunteerInfo = async (_id) => {
         await axios.put(`${BASE_URL}/volunteer/${_id}`, {
-            name: name,
-            phone: phone,
-            email: email
+            name: name.value,
+            phone: phone.value,
+            email: email.value
         })
         .then(function (respose) {
             setAddEditVolunteer(true);
@@ -50,21 +50,21 @@ const EditVolunteer = ({volunteer}) => {
                 type='text'
                 name='name'
                 required='required'
-                placeholder="Enter your name"
+                placeholder="Enter new name"
                 onChange={(e) => handleName(e)}
                 />
             <input
                 type='text'
                 name='phone'
                 required='required'
-                placeholder="Enter your phone number"
+                placeholder="Enter new phone number"
                 onChange={(e) => handlePhone(e)}
                 />
             <input
                 type='email'
                 name='email'
                 required='required'
-                placeholder="Enter your email"
+                placeholder="Enter new email"
                 onChange={(e) => handleEmail(e)}
                 />
             <button className="submit-button" type='submit' onClick={() => updateVolunteerInfo()}>Change</button>

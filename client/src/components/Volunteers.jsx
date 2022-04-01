@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react'
 import NewVolunteer from "./NewVolunteer";
 import EditVolunteer from "./EditVolunteer";
 
+
 const BASE_URL = 'http://localhost:3001/api'
 
 const Volunteers = () => {
@@ -21,6 +22,7 @@ const Volunteers = () => {
 
     const deleteVolunteer = async (_id) => {
         await axios.delete(`${BASE_URL}/volunteer/${_id}`)
+        
     }
 
 
