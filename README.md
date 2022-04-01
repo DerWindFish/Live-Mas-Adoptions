@@ -16,8 +16,8 @@ In this project I plan to build a pet adoption site themed after Taco Bell, wher
 ***
 ***
 ## Picture of Application
-![Imgur](https://imgur.com/KKxLn4H)
-![Imgur](https://imgur.com/mKtRz9k)
+![Imgur](https://imgur.com/KKxLn4H.png)
+![Imgur](https://imgur.com/mKtRz9k.png)
 ***
 ***
 
