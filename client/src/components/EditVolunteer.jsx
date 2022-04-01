@@ -3,7 +3,8 @@ import {useState, useEffect} from 'react'
 import axios from "axios"
 const BASE_URL = 'http://localhost:3001/api'
 
-const EditVolunteer = ({volunteer}) => {
+const EditVolunteer = () => {
+
 
     const [name, setNewName] = useState('')
     const [phone, setNewPhone] = useState('')

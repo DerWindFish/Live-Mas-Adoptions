@@ -67,6 +67,16 @@ const updateVolunteerInfo = async (req, res) => {
     }
 }
 
+const updatePets = async (req, res) => {
+    try {
+        const { id } = req.params;
+        const pets = await Pets.findByIdAndUpdate(id, req.body, { new: true },)
+        return res.status(200).json(pets)
+    } catch (error) {
+        return res.status(500).send(error.message);
+    }
+}
+
 
 const deleteVolunteer = async (req, res) => {
     try {
@@ -88,5 +98,6 @@ module.exports = {
     getPetById,
     getVolunteerById,
     updateVolunteerInfo,
+    updatePets,
     deleteVolunteer
 }

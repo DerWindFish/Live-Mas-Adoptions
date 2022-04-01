@@ -38,6 +38,9 @@
     display: flex;
     flex-wrap: wrap;
     margin-right: 2px;
+    background-image: url('https://www.tacobell.com/medias/Taco-Bell-Wallpapers.jpg?context=bWFzdGVyfHJvb3R8MTM5NTU5fGltYWdlL2pwZWd8aDIwL2g5ZS84OTI3MTk4MDE5NjE0LmpwZ3xiYWM2YWFlNDFlNzA1YTJkNmE5MDU3NzFmNTkyOGRlZGM5M2FmZGRlZmU1NTFjMDZiYmU0NTU4YTI2MTk2NTli');
+    height: 100px;
+    color: white;
 }
 
 .pet-image {
@@ -54,7 +57,6 @@
     background-image: url('https://www.tacobell.com/images/2019-Blog-Wallpaper-10.jpg');
     border-radius: 0.5em;
     margin: 1em;
-    box-shadow: 0 0 0.25em rgba(0, 0, 0, 0.527);
     color: white;
     font-family: 'Georgia';
     border: 2px solid black;

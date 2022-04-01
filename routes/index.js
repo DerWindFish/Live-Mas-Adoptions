@@ -10,6 +10,7 @@ router.get('/pets', controllers.getPets)
 router.get('/pets/:id', controllers.getPetById)
 router.get('/volunteer/:id', controllers.getVolunteerById)
 router.put('/volunteer/:id', controllers.updateVolunteerInfo)
+router.put('/pets/:id', controllers.updatePets)
 router.delete('/volunteer/:id', controllers.deleteVolunteer)
 
 module.exports = router;

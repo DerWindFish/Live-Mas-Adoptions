@@ -37,7 +37,7 @@ const Volunteers = () => {
                     <p>name: { volunteers.name } </p>
                     <p> phone: { volunteers.phone } </p>
                     <p> email: { volunteers.email } </p>
-                    <EditVolunteer volunteers={ volunteers }/>
+                    <EditVolunteer volunteers={ volunteers.value }/>
                     </form>
                     <button className="submit-button" type='submit' onClick={() => deleteVolunteer(volunteers._id)}>Delete</button>
                     
