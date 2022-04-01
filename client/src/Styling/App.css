@@ -56,9 +56,10 @@
 }
 
 .pet-image {
-    height: 270px;
+    height: 290px;
     width: 340px;
     border: 2px solid black;
+    border-radius: 10px;
 }
 .pet-grid {
     flex-wrap:inherit;
@@ -90,4 +91,9 @@
   }
   .delete-button:hover {
     background-color: rgb(9, 191, 247);
+  }
+
+  .callus {
+      text-align: center;
+      color: rgb(35, 206, 206);
   }

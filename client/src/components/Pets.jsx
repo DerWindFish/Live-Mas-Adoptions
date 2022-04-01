@@ -36,6 +36,7 @@ const Pets = () => {
                 </div>
             )
         })}
+        <p className="callus">Ready to adopt? Give us a call @ 876-655-6555</p>
         <Link to='/'>Back Home</Link>
         </div>
     )
