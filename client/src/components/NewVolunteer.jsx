@@ -23,6 +23,10 @@ const NewVolunteer = () => {
         setEmail(event.target.value)
     }
 
+    function refreshPage() {
+        window.location.reload(false);
+    }
+
     const createVolunteer = async () => {
         await axios.post(`${BASE_URL}/volunteer/`, {
             name: name,
@@ -32,11 +36,14 @@ const NewVolunteer = () => {
         .then(function (respose) {
             setAddVolunteer(true);
             console.log(respose)
+            refreshPage()
         })
         .catch(function (error) {
             console.log(error)
         })
     }
+
+   
 
     useEffect(() => {
         return () => {

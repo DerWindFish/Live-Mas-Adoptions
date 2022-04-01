@@ -13,6 +13,10 @@ const Volunteers = () => {
 
     const [volunteers, setVolunteers] = useState([])
     
+    function refreshPage() {
+        window.location.reload(false);
+    }
+
     useEffect(() => {
         async function getVolunteers() {
             const res = await axios.get(`${BASE_URL}/volunteer`)
@@ -24,7 +28,7 @@ const Volunteers = () => {
 
     const deleteVolunteer = async (_id) => {
         await axios.delete(`${BASE_URL}/volunteer/${_id}`)
-        
+        refreshPage()
     }
 
 
