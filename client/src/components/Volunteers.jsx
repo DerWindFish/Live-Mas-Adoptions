@@ -34,7 +34,7 @@ const Volunteers = () => {
 
     return (
         <div>
-            <h2>Add Volunteer:</h2>
+            <h2>Add Yourself to the Live Más List:</h2>
                 <NewVolunteer />
             <h1>List of Volunteers:</h1>
         { volunteers.map((volunteers) => {
