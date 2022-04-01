@@ -10,16 +10,17 @@ const NewVolunteer = () => {
     const [email, setEmail] = useState('')
     const [addVolunteer, setAddVolunteer] = useState(false)
 
-    const handleName = (e) => {
-        setName(e.target.value)
+
+    const handleName = (event) => {
+        setName(event.target.value)
     }
 
-    const handlePhone = (e) => {
-        setPhone(e.target.value)
+    const handlePhone = (event) => {
+        setPhone(event.target.value)
     }
 
-    const handleEmail = (e) => {
-        setEmail(e.target.value)
+    const handleEmail = (event) => {
+        setEmail(event.target.value)
     }
 
     const createVolunteer = async () => {
@@ -50,21 +51,21 @@ const NewVolunteer = () => {
                 name='name'
                 required='required'
                 placeholder="Enter your name"
-                onChange={(e) => handleName(e)}
+                onChange={(event) => handleName(event)}
                 />
             <input
                 type='text'
                 name='phone'
                 required='required'
                 placeholder="Enter your phone number"
-                onChange={(e) => handlePhone(e)}
+                onChange={(event) => handlePhone(event)}
                 />
             <input
                 type='email'
                 name='email'
                 required='required'
                 placeholder="Enter your email"
-                onChange={(e) => handleEmail(e)}
+                onChange={(event) => handleEmail(event)}
                 />
             <button className="submit-button" type='submit' onClick={() => createVolunteer()}>Add Volunteer</button>
         </div>
