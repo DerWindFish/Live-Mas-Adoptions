@@ -3,6 +3,7 @@
 ### by Mark Ryan
 ### date: 3/27/22
 ***
+[GitHub](https://github.com/DerWindFish) | [LinkedIn](https://www.linkedin.com/in/markrryan/)
 ***
 
 Have you ever wondered what a pet adoption agency run by the geniuses at Taco Bell would be like? Well wonder no more.
@@ -31,11 +32,20 @@ Technology Used will include:
 
 ***
 ***
+## To be Added:
+- The ability to add additional pets the selection from the user side
+- Click on the animals picture to take you to the detail page of the animal rather than it being displayed all on one page
+- Fix it so the page auto refreshes when CRUD fuctions are happening
 
+***
+***
+### Other Links:
 [Trello Bored](https://trello.com/b/AqCOhwfs/live-mas-agency) <br>
-[ERD](https://drive.google.com/file/d/1---y4W1ArUAsNHLKmgcWSKrU3uLIxBd4/view?usp=sharing)
+[ERD](https://drive.google.com/file/d/1---y4W1ArUAsNHLKmgcWSKrU3uLIxBd4/view?usp=sharing) <br>
 [Live Más Adoptions](https://stormy-hollows-50774.herokuapp.com/)
 
 ***
+***
 ### Credits:
-- Taco Bell, for the use of their logo and the inspiration
+- [Taco Bell](https://tacobell.com), for the use of their logo, many backgrounds listed on their website, and the inspiration
+- [DuckDuckGo](https://duckduckgo.com), for the use of so many images
