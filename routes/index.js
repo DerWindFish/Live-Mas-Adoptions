@@ -5,6 +5,7 @@ const controllers = require('../controllers')
 router.get('/', (req, res) => res.send('The Root of all doggos'))
 
 router.post('/volunteer', controllers.createVolunteer)
+router.post('/pets', controllers.createPet)
 router.get('/volunteer', controllers.getVolunteers)
 router.get('/pets', controllers.getPets)
 router.get('/pets/:id', controllers.getPetById)

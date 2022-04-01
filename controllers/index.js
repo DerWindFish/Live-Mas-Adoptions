@@ -13,6 +13,18 @@ const createVolunteer = async (req, res) => {
     }
 }
 
+const createPet = async (req, res) => {
+    try {
+        const pets = await new Pets(req.body)
+        await pets.save()
+        return res.status(201).json({
+            pets,
+        });
+    } catch (error) {
+        return res.status(500).json({ error: error.message })
+    }
+}
+
 const getVolunteers = async (req, res) => {
     try{
         const volunteers = await Volunteer.find()
@@ -99,5 +111,6 @@ module.exports = {
     getVolunteerById,
     updateVolunteerInfo,
     updatePets,
-    deleteVolunteer
+    deleteVolunteer,
+    createPet
 }
