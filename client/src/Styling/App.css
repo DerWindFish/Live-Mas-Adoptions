@@ -2,6 +2,7 @@
     padding: 0;
     margin:0;
     box-sizing: border-box;
+    font-family: Impact;
 }
 
 .homediv {
@@ -21,7 +22,7 @@
     min-height: 2em;
     display: flex;
     padding: 10px;
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-family: Impact;
 }
 
 .navbar a {
@@ -44,8 +45,8 @@
 }
 
 .pet-image {
-    height: 250px;
-    width: 320px;
+    height: 270px;
+    width: 340px;
     border: 2px solid black;
 }
 .pet-grid {
