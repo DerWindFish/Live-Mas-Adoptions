@@ -49,3 +49,4 @@ Technology Used will include:
 ### Credits:
 - [Taco Bell](https://tacobell.com), for the use of their logo, many backgrounds listed on their website, and the inspiration
 - [DuckDuckGo](https://duckduckgo.com), for the use of so many images
+- [Upmostly](https://upmostly.com/tutorials/how-to-refresh-a-page-or-component-in-react), for a small function used to help refresh my page components
