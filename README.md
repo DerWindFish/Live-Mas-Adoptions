@@ -3,7 +3,7 @@
 ### by Mark Ryan
 ### date: 3/27/22
 ***
-[GitHub](https://github.com/DerWindFish) | [LinkedIn](https://www.linkedin.com/in/markrryan/)
+[GitHub](https://github.com/DerWindFish) | [LinkedIn](https://www.linkedin.com/in/markrryan/) | 
 ***
 
 Have you ever wondered what a pet adoption agency run by the geniuses at Taco Bell would be like? Well wonder no more.
@@ -12,7 +12,7 @@ Have you ever wondered what a pet adoption agency run by the geniuses at Taco Be
 
 Welcome to the Live Más adoption agency! A whole new way to experience adopting a fuzzy new friend!
 
-In this project I plan to build a pet adoption site themed after Taco Bell, where user will be able to view pictures of various pets named after taco bell menu items, click on the pictures to be taken to a page where you can view information about the animal (breed, age, personalilty). I also plan on having the ability to add, edit and delete pets from the system. I will also have a page where you can put in your information to volunteer at the agency.
+In this project I built a pet adoption site themed after Taco Bell, where user will be able to view pictures, and learn information about various pets all of whom are named after taco bell menu items. You are also able view a list of all the Voulnteers at the agency, as well at add, delete and edit information from that list.
 
 ***
 ***
@@ -35,7 +35,6 @@ Technology Used will include:
 ## To be Added:
 - The ability to add additional pets the selection from the user side
 - Click on the animals picture to take you to the detail page of the animal rather than it being displayed all on one page
-- Fix it so the page auto refreshes when CRUD fuctions are happening
 
 ***
 ***
