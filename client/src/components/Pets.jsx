@@ -1,6 +1,7 @@
 import React from "react";
 import { useState, useEffect} from 'react'
 import axios from 'axios'
+import { Link } from "react-router-dom";
 
 
 const BASE_URL = 'http://localhost:3001/api'
@@ -35,6 +36,7 @@ const Pets = () => {
                 </div>
             )
         })}
+        <Link to='/'>Back Home</Link>
         </div>
     )
 }

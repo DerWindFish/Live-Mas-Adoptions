@@ -68,7 +68,7 @@ const EditVolunteer = () => {
                 placeholder="Enter new email"
                 onChange={(e) => handleEmail(e)}
                 />
-            <button className="submit-button" type='submit' onClick={() => updateVolunteerInfo()}>Change</button>
+            <button className="submit-button" type='submit' onClick={() => updateVolunteerInfo()}>Edit Info</button>
         </div>
     )
 }

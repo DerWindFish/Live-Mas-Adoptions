@@ -3,6 +3,7 @@ import axios from 'axios';
 import { useState, useEffect } from 'react'
 import NewVolunteer from "./NewVolunteer";
 import EditVolunteer from "./EditVolunteer";
+import { Link } from "react-router-dom";
 
 
 const BASE_URL = 'http://localhost:3001/api'
@@ -39,7 +40,7 @@ const Volunteers = () => {
                     <p> email: { volunteers.email } </p>
                     <EditVolunteer volunteers={ volunteers.value }/>
                     </form>
-                    <button className="submit-button" type='submit' onClick={() => deleteVolunteer(volunteers._id)}>Delete</button>
+                    <button className="delete-button" type='submit' onClick={() => deleteVolunteer(volunteers._id)}>Delete Volunteer</button>
                     
                 </div>
                 
@@ -47,8 +48,10 @@ const Volunteers = () => {
         )}
         <h2>Add Volunteer:</h2>
         <NewVolunteer />
+        <Link to='/'>Back Home</Link>
         </div>
      )
+     
 }
 
 export default Volunteers

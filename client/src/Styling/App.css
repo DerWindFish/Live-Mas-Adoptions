@@ -11,7 +11,7 @@
     display: grid;
     text-align: center;
     display:inherit;
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size:x-large;
 }
 
 .navbar {
@@ -19,18 +19,26 @@
     align-items: center;
     color: white;
     background-color: #702082;
-    min-height: 2em;
     display: flex;
     padding: 10px;
     font-family: Impact;
+    width: 100%;
+    top: 0;
 }
 
-.navbar a {
+.navbar a{
     text-decoration: none;
     color: white;
     font-weight: bold;
     margin-left: 0.5em;
     text-align: right;
+}
+
+ a{
+    text-decoration: none;
+    color: #f16896;
+    font-size: x-large;
+    
 }
 
 .vol {
@@ -61,4 +69,21 @@
     color: white;
     font-family: 'Georgia';
     border: 2px solid black;
+  }
+
+  .delete-button {
+      height: 20px;
+      position: relative;
+      top: 61px;
+  }
+
+  .delete-button, .submit-button {
+      background-color: rgb(10, 169, 218);
+      cursor: pointer;
+  }
+  .submit-button:hover {
+    background-color: rgb(9, 191, 247);
+  }
+  .delete-button:hover {
+    background-color: rgb(9, 191, 247);
   }
