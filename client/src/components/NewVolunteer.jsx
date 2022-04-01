@@ -66,7 +66,7 @@ const NewVolunteer = () => {
                 placeholder="Enter your email"
                 onChange={(e) => handleEmail(e)}
                 />
-            <button className="submit-button" type='submit' onClick={() => createVolunteer()}>Add</button>
+            <button className="submit-button" type='submit' onClick={() => createVolunteer()}>Add Volunteer</button>
         </div>
     )
 }

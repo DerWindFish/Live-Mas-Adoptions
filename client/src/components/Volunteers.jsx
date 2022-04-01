@@ -29,6 +29,8 @@ const Volunteers = () => {
 
     return (
         <div>
+            <h2>Add Volunteer:</h2>
+                <NewVolunteer />
             <h1>List of Volunteers:</h1>
         { volunteers.map((volunteers) => {
             return (
@@ -46,8 +48,7 @@ const Volunteers = () => {
                 
             )}    
         )}
-        <h2>Add Volunteer:</h2>
-        <NewVolunteer />
+        
         <Link to='/'>Back Home</Link>
         </div>
      )

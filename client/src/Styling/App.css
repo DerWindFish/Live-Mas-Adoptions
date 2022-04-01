@@ -50,6 +50,9 @@
     background-image: url('https://www.tacobell.com/medias/Taco-Bell-Wallpapers.jpg?context=bWFzdGVyfHJvb3R8MTM5NTU5fGltYWdlL2pwZWd8aDIwL2g5ZS84OTI3MTk4MDE5NjE0LmpwZ3xiYWM2YWFlNDFlNzA1YTJkNmE5MDU3NzFmNTkyOGRlZGM5M2FmZGRlZmU1NTFjMDZiYmU0NTU4YTI2MTk2NTli');
     height: 100px;
     color: white;
+    font-size: larger;
+    height: fit-content;
+    border: 1px solid black;
 }
 
 .pet-image {
@@ -74,12 +77,13 @@
   .delete-button {
       height: 20px;
       position: relative;
-      top: 61px;
+      top: 76.24px;
   }
 
   .delete-button, .submit-button {
       background-color: rgb(10, 169, 218);
       cursor: pointer;
+      
   }
   .submit-button:hover {
     background-color: rgb(9, 191, 247);
